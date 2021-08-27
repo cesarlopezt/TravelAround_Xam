@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelAround.Views.SignupPage"
+             xmlns:local="clr-namespace:TravelAround.ViewModels"
+             Title="Register"
+             >
+    <ContentPage.BindingContext>
+        <local:SignUpViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="50">
+            <Label 
+                Text="Join Travel Around" 
+                FontSize="Subtitle" 
+                FontAttributes="Bold" 
+                HorizontalOptions="Center"
+                Margin="0,20,0,20"/>
+                
+            <Label Text="Full Name" FontSize="16"/>
+            <Entry 
+            Text="{Binding NewUser.Name}"
+            x:Name="nameEntry" 
+            TextColor="White" />
+            
+            <Label Text="In which country you were born?" FontSize="16"/>
+            <Entry 
+            Text="{Binding NewUser.NativeCountry}"
+            x:Name="nativeCountryEntry" 
+            TextColor="White" />
+
+            <Label Text="What's your favorite country?" FontSize="16"/>
+            <Entry 
+            Text="{Binding NewUser.FavoriteCountry}"
+            x:Name="favCountryEntry" 
+            TextColor="White" />
+
+            <Label Text="Username" FontSize="16"/>
+            <Entry 
+            Text="{Binding NewUser.Username}"
+            x:Name="usernameEntry" 
+            TextColor="White" />
+
+            <Label Text="Password" FontSize="16" Margin="0,20,0,0"/>
+            <Entry 
+            Text="{Binding NewUser.Password}"
+            x:Name="passwordEntry" 
+            TextColor="White"
+            IsPassword="True"/>
+
+            <Label Text="Confirm Password" FontSize="16"/>
+            <Entry 
+            Text="{Binding NewUser.ConfirmPassword}"
+            x:Name="confirmPasswordEntry" 
+            TextColor="White"
+            IsPassword="True" />
+
+            <Button 
+            Text="Register" 
+            BackgroundColor="#FD003A" 
+            CornerRadius="10" 
+            Margin="0,30,0,30" 
+            Command="{Binding RegisterCommand}"  />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage >

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelAround.Views.LoginPage"
+             xmlns:local="clr-namespace:TravelAround.ViewModels"
+             Title="Login">
+
+    <ContentPage.BindingContext>
+        <local:LoginViewModel/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout Padding="50">
+        <StackLayout Orientation="Horizontal" Margin="0,0,0,50">
+            <Image Source="pin.png" Grid.Column="0" />
+            <Label 
+                Text="Travel Around" 
+                FontSize="Title" 
+                FontAttributes="Bold" 
+                VerticalOptions="Center" 
+                Grid.Column="1"  />
+        </StackLayout>
+        <Label Text="Username" FontSize="16"/>
+        <Entry 
+            Text="{Binding User.Username}"
+            x:Name="usernameEntry" 
+            TextColor="White" 
+            Placeholder="Insert your username here..."  />
+        <Label Text="Password" FontSize="16"/>
+        <Entry 
+            Text="{Binding User.Password}"
+            x:Name="passwordEntry" 
+            TextColor="White" 
+            Placeholder="Insert your password here..." 
+            IsPassword="True" />
+        <Button 
+            Text="Login" 
+            BackgroundColor="#FD003A" 
+            CornerRadius="10" 
+            Margin="0,30,0,30" 
+            Command="{Binding LoginCommand}"  />
+
+        <Label 
+            Text="Start traveling with us!" 
+            FontSize="Small" 
+            HorizontalOptions="End" />
+        <Label 
+            Text="Register!" 
+            FontSize="Small" 
+            HorizontalOptions="End"
+            TextColor="#FD003A">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding MoveToSignupCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+
+</ContentPage>
