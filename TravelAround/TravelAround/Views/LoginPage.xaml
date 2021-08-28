@@ -11,13 +11,12 @@
     
     <StackLayout Padding="50">
         <StackLayout Orientation="Horizontal" Margin="0,0,0,50">
-            <Image Source="pin.png" Grid.Column="0" />
+            <Image Source="pin.png" />
             <Label 
                 Text="Travel Around" 
                 FontSize="Title" 
                 FontAttributes="Bold" 
-                VerticalOptions="Center" 
-                Grid.Column="1"  />
+                VerticalOptions="Center" />
         </StackLayout>
         <Label Text="Username" FontSize="16"/>
         <Entry 

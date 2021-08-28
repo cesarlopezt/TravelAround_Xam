@@ -2,12 +2,71 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TravelAround.Views.HomePage"
+             xmlns:local="clr-namespace:TravelAround.ViewModels"
              Title="Menu">
+    <ContentPage.BindingContext>
+        <local:HomeViewModel/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Home!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid ColumnDefinitions="*,*" Margin="20"
+              RowSpacing="20" 
+              ColumnSpacing="20">
+            <Frame BackgroundColor="#FBF5F3" Grid.Column="0" Grid.Row="0" CornerRadius="20">
+                <Grid Padding="10" RowSpacing="10" RowDefinitions="*,35">
+                    <Image Source="{Binding BuyTicketsOption.Image}" Grid.Row="0" />
+                    <Label 
+                        Grid.Row="1"
+                        Text="{Binding BuyTicketsOption.Title}"
+                        TextColor="Black"
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center" />
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="#FBF5F3" Grid.Column="0" Grid.Row="1" CornerRadius="20">
+                <Grid Padding="10" RowSpacing="10" RowDefinitions="*,35">
+                    <Image Source="{Binding CheckTrendsOption.Image}" Grid.Row="0" />
+                    <Label 
+                        Grid.Row="1"
+                        Text="{Binding CheckTrendsOption.Title}"
+                        TextColor="Black"
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center" />
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="#FBF5F3" Grid.Column="0" Grid.Row="2" CornerRadius="20">
+                <Grid Padding="10" RowSpacing="10" RowDefinitions="*,35">
+                    <Image Source="{Binding FastFoodOption.Image}" Grid.Row="0" />
+                    <Label 
+                        Grid.Row="1"
+                        Text="{Binding FastFoodOption.Title}"
+                        TextColor="Black"
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center" />
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="#FBF5F3" Grid.Column="1" Grid.Row="0" CornerRadius="20">
+                <Grid Padding="10" RowSpacing="10" RowDefinitions="*,35">
+                    <Image Source="{Binding TipsOption.Image}" Grid.Row="0" />
+                    <Label 
+                        Grid.Row="1"
+                        Text="{Binding TipsOption.Title}"
+                        TextColor="Black"
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center" />
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="#FBF5F3" Grid.Column="1" Grid.Row="1" CornerRadius="20">
+                <Grid Padding="10" RowSpacing="10" RowDefinitions="*,35">
+                    <Image Source="{Binding JournalOption.Image}" Grid.Row="0" />
+                    <Label 
+                        Grid.Row="1"
+                        Text="{Binding JournalOption.Title}"
+                        TextColor="Black"
+                        FontAttributes="Bold" 
+                        HorizontalOptions="Center" />
+                </Grid>
+            </Frame>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
